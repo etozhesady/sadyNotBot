@@ -1,9 +1,12 @@
+require('dotenv').config();
 const Discord = require('discord.js');
-const { prefix, token } = require('./botconfig.json');
 const bot = new Discord.Client();
 const { Client, MessageEmbed } = require('discord.js');
 let citata = require('./quotess.json');
 let schedule = require('./schedulee.json');
+
+const prefix = process.env.PREFIX;
+const token = process.env.DISCORD_BOT_TOKEN;
                  
 bot.on('ready', () => {
   console.log(`Logged in as ${bot.user.tag}!`);
